@@ -1,7 +1,7 @@
 spring:
   datasource:
 #    url: jdbc:h2:tcp://localhost/~/projects/spring/junstagram/db/junstagram # 윈도우
-    url: jdbc:h2:tcp://localhost/~/Documents/projects/spring/junstargram/db/junstargram # 맥
+    url: jdbc:h2:tcp://localhost/~/Documents/projects/spring/junstargram/db/junstargram;MODE=MYSQL # 맥
     username: sa
     password:
     driver-class-name: org.h2.Driver
@@ -13,6 +13,8 @@ spring:
       hibernate:
 #        show_sql: true
         format_sql: true
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        dialect.storage_engine: innodb
 
 logging:
   level:
