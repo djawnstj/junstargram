@@ -16,7 +16,7 @@ class Post(
         protected set
     @OneToOne(fetch = LAZY, cascade = [CascadeType.ALL])
     @JoinColumn(name = "post_mem")
-    var postMem: Member = Member()
+    var postMem: Member = mem
         protected set
 
     @OneToOne(fetch = LAZY, cascade = [CascadeType.ALL])
