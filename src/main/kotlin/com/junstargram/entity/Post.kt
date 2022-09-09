@@ -13,16 +13,16 @@ class Post(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val postId: Long? = null
     var post: String = post
-        private set
+        protected set
     @OneToOne(fetch = LAZY, cascade = [CascadeType.ALL])
     @JoinColumn(name = "post_mem")
-    var postMem: Member = mem
-        private set
+    var postMem: Member = Member()
+        protected set
 
     @OneToOne(fetch = LAZY, cascade = [CascadeType.ALL])
     @JoinColumn(name="post_img_id")
     var postImg: PostImg = postImg
-        private set
+        protected set
 
     fun writePost(post: String) {
         this.post = post

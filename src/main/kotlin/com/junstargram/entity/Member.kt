@@ -10,19 +10,19 @@ class Member: BaseEntity() {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val uid: Long? = null
     var memId: String = ""
-        private set
+        protected set
     var memPw: String = ""
-        private set
+        protected set
     var memName: String = ""
-        private set
+        protected set
     var memPhone: String = ""
-        private set
+        protected set
     var memEmail: String = ""
-        private set
+        protected set
     var memIntroduce: String? = null
-        private set
+        protected set
     var memImg: String? = null
-        private set
+        protected set
 
     companion object {
         

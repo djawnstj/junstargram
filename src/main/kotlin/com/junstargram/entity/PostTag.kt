@@ -15,6 +15,6 @@ class PostTag(
     val post: Post = post
 
     var postTag: String = ""
-        private set
+        protected set
 
 }

@@ -21,6 +21,6 @@ class Comment(
     val comMem: Member = comMem
 
     var comment: String = ""
-        private set
+        protected set
 
 }
