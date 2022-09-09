@@ -6,7 +6,7 @@ import javax.persistence.EntityManager
 
 @RequiredArgsConstructor
 class MemberRepositoryImpl(
-    val em: EntityManager
+    private val em: EntityManager
 ): MemberRepository {
 
     /**
