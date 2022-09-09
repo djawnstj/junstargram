@@ -23,4 +23,23 @@ class Member: BaseEntity() {
         private set
     var memImg: String? = null
         private set
+
+    companion object {
+        
+        //=============== 생성 메서드 ===============//
+        fun createMember(memId: String, memPw: String, memName: String, memPhone: String, memEmail: String, memIntroduce: String?, memImg: String?): Member {
+            val member = Member()
+            member.memId = memId
+            member.memPw = memPw
+            member.memName = memName
+            member.memPhone = memPhone
+            member.memEmail = memEmail
+            member.memIntroduce = memIntroduce
+            member.memImg = memImg
+
+            return member
+        }
+        
+    }
+    
 }
