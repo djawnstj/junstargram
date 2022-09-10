@@ -5,27 +5,22 @@ import javax.persistence.*
 import javax.persistence.FetchType.*
 
 @Entity
-class Post(
-    post: String,
-    mem: Member,
-    postImg: PostImg
-): BaseEntity() {
+class Post protected constructor(post: String, mem: Member): BaseEntity() {
+
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val postId: Long? = null
-    var post: String = post
-        protected set
+
+    val post: String = post
+
     @OneToOne(fetch = LAZY, cascade = [CascadeType.ALL])
     @JoinColumn(name = "post_mem")
-    var postMem: Member = mem
-        protected set
+    val postMem: Member = mem
 
-    @OneToOne(fetch = LAZY, cascade = [CascadeType.ALL])
-    @JoinColumn(name="post_img_id")
-    var postImg: PostImg = postImg
-        protected set
+    companion object {
+        fun createPost(post: String, mem: Member): Post {
+            return Post(post, mem)
+        }
 
-    fun writePost(post: String) {
-        this.post = post
     }
 
 }
