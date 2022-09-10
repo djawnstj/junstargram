@@ -1,5 +1,7 @@
 package com.junstargram.repository
 
+import com.junstargram.entity.Follow
+import com.junstargram.entity.Member
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.runner.RunWith
@@ -20,7 +22,8 @@ internal class FollowRepositoryImplTest {
     @Test
     fun 팔로우_저장() {
         // given
-
+        Member()
+        Follow.createFollow()
         followRepository.save()
 
         // when

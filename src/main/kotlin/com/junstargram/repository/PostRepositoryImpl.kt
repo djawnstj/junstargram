@@ -22,7 +22,7 @@ class PostRepositoryImpl(
      */
     override fun findByMemberWithPage(uid: Long, page: Int): List<Post> {
         return em.createQuery("select p from Post p join Follow f" +
-                " on p.postMem = f.following where f.mem.uid = :uid" +
+                " on p.postMem = f.following where f.follower.uid = :uid" +
                 " order by p.postId desc", Post::class.java)
             .setParameter("uid", uid)
             .setFirstResult(page) // 페이징, 시작

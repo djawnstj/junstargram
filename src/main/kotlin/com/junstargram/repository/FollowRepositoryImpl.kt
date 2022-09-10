@@ -22,7 +22,7 @@ class FollowRepositoryImpl(
      * 대상을 팔로우 하고있는 회원 목록 조회
      */
     override fun findFollowedById(uid: Long): List<Follow> {
-        return em.createQuery("select f from Follow f where f.mem.uid = :uid", Follow::class.java)
+        return em.createQuery("select f from Follow f where f.follower.uid = :uid", Follow::class.java)
             .setParameter("uid", uid).resultList
     }
 
