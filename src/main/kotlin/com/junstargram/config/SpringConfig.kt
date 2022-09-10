@@ -1,9 +1,6 @@
 package com.junstargram.config
 
-import com.junstargram.repository.MemberRepository
-import com.junstargram.repository.MemberRepositoryImpl
-import com.junstargram.repository.PostRepository
-import com.junstargram.repository.PostRepositoryImpl
+import com.junstargram.repository.*
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import javax.persistence.EntityManager
@@ -19,13 +16,12 @@ class SpringConfig(
 //    }
 
     @Bean
-    fun memberRepository(): MemberRepository? {
-        return MemberRepositoryImpl(em)
-    }
+    fun memberRepository(): MemberRepository = MemberRepositoryImpl(em)
 
     @Bean
-    fun postRepository(): PostRepository? {
-        return PostRepositoryImpl(em)
-    }
+    fun postRepository(): PostRepository = PostRepositoryImpl(em)
+
+    @Bean
+    fun followRepository(): FollowRepository = FollowRepositoryImpl(em)
 
 }

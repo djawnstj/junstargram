@@ -17,6 +17,10 @@ class Post protected constructor(post: String, mem: Member): BaseEntity() {
     val postMem: Member = mem
 
     companion object {
+
+        /**
+         * 게시글 생성 메서드
+         */
         fun createPost(post: String, mem: Member): Post {
             return Post(post, mem)
         }

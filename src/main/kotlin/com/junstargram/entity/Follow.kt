@@ -3,7 +3,7 @@ package com.junstargram.entity
 import javax.persistence.*
 
 @Entity
-class Follow(
+class Follow protected constructor(
     @OneToOne(fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
     @JoinColumn(name = "mem_id")
     val mem: Member,
@@ -14,5 +14,13 @@ class Follow(
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val folId: Long? = null
+
+    companion object {
+
+        /**
+         *
+         */
+
+    }
 
 }
