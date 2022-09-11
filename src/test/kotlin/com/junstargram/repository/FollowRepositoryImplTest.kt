@@ -18,15 +18,21 @@ internal class FollowRepositoryImplTest {
 
     @Autowired lateinit var em: EntityManager
     @Autowired lateinit var followRepository: FollowRepository
+    @Autowired lateinit var memberRepository: MemberRepository
 
     @Test
     fun 팔로우_저장() {
         // given
-        Member()
-        Follow.createFollow()
-        followRepository.save()
+        val createMember1 = Member.createMember("test1", "test", "홍길동1", "010-1111-2222", "test@test.com", null, null)
+        val createMember2 = Member.createMember("test2", "test", "홍길동2", "010-1111-2222", "test@test.com", null, null)
+
+        memberRepository.save(createMember1)
+        memberRepository.save(createMember2)
+
+        val createFollow = Follow.createFollow(createMember1, createMember2)
 
         // when
+        followRepository.save(createFollow)
 
         // then
 
