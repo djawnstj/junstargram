@@ -53,6 +53,9 @@ dependencies {
     // 스웨거 api 문서
     implementation("io.springfox:springfox-swagger2:3.0.0")
     implementation("io.springfox:springfox-swagger-ui:3.0.0")
+
+    // 세션
+    implementation("org.springframework.session:spring-session-core")
 }
 
 tasks.withType<KotlinCompile> {
